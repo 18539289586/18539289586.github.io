@@ -173,7 +173,7 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2019-10-13T05:17:24.983Z" itemprop="datePublished">
+      <time datetime="2019-10-13T12:33:55.337Z" itemprop="datePublished">
           2019-10-13
       </time>
     
@@ -210,64 +210,25 @@
 <p>public 构造方法名（）{</p>
 <p>}<br>其中构造方法名与类同名；当没有指定的构造方法时，系统会自动添加无参构造方法</p>
 <ol start="3">
-<li>Static使用<br>Static修饰的成员属于整个类，被类的所有对象共享。可通过使用类名直接访问静态成员，也可通过对象名<br>Static可以修饰变量、方法和代码块</li>
-</ol>
-<p>（1）Static使用之静态方法<br>public class Helloworld {<br>    public static void print() {<br>        System.out.println(“***”);<br>    }</p>
-<pre><code>public static void main(String[] args) {
-    Helloworld.print();
-    Helloworld demo = new Helloworld;
-    demo.print();
-}</code></pre><p>}<br>注意：静态方法中可以直接调用同类的静态成员，但不可以直接调用非静态成员；普通成员方法中可以直接访问同类的非静态变量和静态变量；静态方法中不能直接调用非静态成员方法</p>
-<p>（2）Static使用之静态初始化块<br>静态初始化块在类加载时执行，且只会执行一次，同时静态初始化块只能给静态变量赋值，不能初始化普通成员</p>
-<p>public class Helloworld {<br>    int num1;<br>    int num2;<br>    static int num3;</p>
-<pre><code>public Helloworld() {
-    num1 = 91;
-    System.out.println(&quot;构造方法为num1赋值&quot;);
-    num2 = 74;
-    System.out.println(&quot;初始化块为num2赋值&quot;);
-    num3 = 83;
-    System.out.println(&quot;静态初始化块为num3赋值&quot;);
-}
+<li>Static使用<br>Static修饰的成员属于整个类，被类的所有对象共享。可通过使用类名直接访问静态成员，也可通过对象名<br>Static可以修饰变量、方法和代码块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">（1）Static使用之静态方法</span><br><span class="line">public class Helloworld &#123;</span><br><span class="line">    public static void print() &#123;</span><br><span class="line">        System.out.println(&quot;***&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Helloworld.print();</span><br><span class="line">        Helloworld demo = new Helloworld;</span><br><span class="line">        demo.print();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-public static void main(String[] args) {
-    Helloworld hello = new Helloworld();
-    System.out.println(hello.num1);
-    System.out.println(hello.num2);
-    System.out.println(num3);
-    Helloworld hello2 = new Helloworld();
-}</code></pre><p>}<br>运行结果：静态初始化块为num3赋值<br>初始化块为num2赋值<br>构造方法为num1赋值<br>91<br>74<br>83<br>初始化块为num2赋值<br>构造方法为num1赋值</p>
-<p>二、java面向对象的特性</p>
+</li>
+</ol>
+<p>注意：静态方法中可以直接调用同类的静态成员，但不可以直接调用非静态成员；普通成员方法中可以直接访问同类的非静态变量和静态变量；静态方法中不能直接调用非静态成员方法</p>
+<p>（2）Static使用之静态初始化块<br>静态初始化块在类加载时执行，且只会执行一次，同时静态初始化块只能给静态变量赋值，不能初始化普通成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class Helloworld &#123;</span><br><span class="line">    int num1;</span><br><span class="line">    int num2;</span><br><span class="line">    static int num3;</span><br><span class="line"></span><br><span class="line">    public Helloworld() &#123;</span><br><span class="line">        num1 = 91;</span><br><span class="line">        System.out.println(&quot;构造方法为num1赋值&quot;);</span><br><span class="line">        num2 = 74;</span><br><span class="line">        System.out.println(&quot;初始化块为num2赋值&quot;);</span><br><span class="line">        num3 = 83;</span><br><span class="line">        System.out.println(&quot;静态初始化块为num3赋值&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Helloworld hello = new Helloworld();</span><br><span class="line">        System.out.println(hello.num1);</span><br><span class="line">        System.out.println(hello.num2);</span><br><span class="line">        System.out.println(num3);</span><br><span class="line">        Helloworld hello2 = new Helloworld();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：静态初始化块为num3赋值<br>初始化块为num2赋值<br>构造方法为num1赋值<br>91<br>74<br>83<br>初始化块为num2赋值<br>构造方法为num1赋值<br>二、java面向对象的特性</p>
 <ol>
 <li>封装性：将类的某些信息隐藏在内部，通过类的方法来实现操作访问<br>步骤：</li>
 <li>1 修改属性可见性；</li>
 <li>2 创建getter\setter方法；</li>
 <li>3在方法中加入属性控制语句</li>
 </ol>
-<p>(1)静态内部类:<br>public class SOuter {<br>    private int a = 99;<br>    static int b = 1;</p>
-<pre><code>public static class SInner {
-    int b = 2;
+<p>(1)静态内部类:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class SOuter &#123;</span><br><span class="line">    private int a = 99;</span><br><span class="line">    static int b = 1;</span><br><span class="line"></span><br><span class="line">    public static class SInner &#123;</span><br><span class="line">        int b = 2;</span><br><span class="line"></span><br><span class="line">        public void test() &#123;</span><br><span class="line">            System.out.println(&quot;访问外部类b&quot; + SOuter.b);</span><br><span class="line">            System.out.println(&quot;访问内部类b&quot; + b);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        //三行表示</span><br><span class="line">        SInner sInner;</span><br><span class="line">        sInner = new SInner();</span><br><span class="line">        sInner.test();</span><br><span class="line"></span><br><span class="line">        //两行表示</span><br><span class="line">        SInner si = new SInner();</span><br><span class="line">        si.test();</span><br><span class="line"></span><br><span class="line">        //一行表示</span><br><span class="line">        new SInner().test();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    public void test() {
-        System.out.println(&quot;访问外部类b&quot; + SOuter.b);
-        System.out.println(&quot;访问内部类b&quot; + b);
-    }
-}
-
-public static void main(String[] args) {
-
-    //三行表示
-    SInner sInner;
-    sInner = new SInner();
-    sInner.test();
-
-    //两行表示
-    SInner si = new SInner();
-    si.test();
-
-    //一行表示
-    new SInner().test();
-
-}</code></pre><p>}<br>(2)成员内部类：访问外部类时使用this指针<br>（3）方法内部类：只能在该方法中使用，且不能使用访问控制符和Static修饰符<br>2. 继承性<br>（1）一般形式：class 子类 extends 父类<br>（2）方法重写：子类对继承的父类方法不满意可以重写，调用时优先调用子类方法<br>（3）继承的初始化顺序：先初始化父类，再到子类；先执行初始化对象中属性，再执行狗在方法中的初始化<br>（4）父类对象–属性初始化–构造方法–子类对象–属性初始化–构造方法<br>（5）注意：如果子类构造方法中没有显示调用父类的构造方法，默认调用父类无参构造方法，若此父类没用无参的构造方法，则编译出错</p>
+<p>(2)成员内部类：访问外部类时使用this指针<br>（3）方法内部类：只能在该方法中使用，且不能使用访问控制符和Static修饰符<br>2. 继承性<br>（1）一般形式：class 子类 extends 父类<br>（2）方法重写：子类对继承的父类方法不满意可以重写，调用时优先调用子类方法<br>（3）继承的初始化顺序：先初始化父类，再到子类；先执行初始化对象中属性，再执行狗在方法中的初始化<br>（4）父类对象–属性初始化–构造方法–子类对象–属性初始化–构造方法<br>（5）注意：如果子类构造方法中没有显示调用父类的构造方法，默认调用父类无参构造方法，若此父类没用无参的构造方法，则编译出错</p>
 <ol start="3">
 <li>多态性<br>引用多态：父类的引用可以指向本类的对象，也可指向子类的对象<br>方法多态：创建本类对象时，调用的方法为本类方法；创建子类对象时，调用的方法为子类的重写的方法或者继承的方法</li>
 </ol>
@@ -312,8 +273,8 @@ public static void main(String[] args) {
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/10/18/two/" style="float: left;">
-        ← 晴天
+    <a class="pull-left" href="/2019/10/31/GITHub上传/" style="float: left;">
+        ← github上传
     </a>
     
     
